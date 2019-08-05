@@ -3,27 +3,33 @@
   <head>
     <meta charset='utf-8'/>
     <title>Survey Form</title>
+
+    <link href='style.css' rel='stylesheet' type='text/css'/>
   </head>
   <body>
     <header>
-      <h1>Survey Form</h1>
+      <h1 id='title'>Survey Form</h1>
     </header>
     <section>
-      <h2>Let us know how we can improve</h2>
-      <form action="#">
+      <h2 id='description'>Let us know how we can improve</h2>
+      <form id='survey-form' action="#">
         <div id="user-info">
-          <label for="name">* Name:</label>
-          <input id="name" type="text" placeholder="Enter your name" required/>
-
-          <label for="email">* Email:</label>
-          <input id="email" type="email" placeholder="Example@email.com" required/>
-          
-          <label for="age">* Age:</label>
-          <input id="age" type="number" placeholder="Enter your age" required/>
+          <div class='user-info-input'>
+            <label id="name-label" for="name">* Name:</label>
+            <input id="name" type="text" placeholder="Enter your name" required/>
+          </div>
+          <div class='user-info-input'>
+            <label id="email-label" for="email">* Email:</label>
+            <input id="email" type="email" placeholder="Example@email.com" required/>
+          </div>
+          <div class='user-info-input'>
+            <label id="number-label" for="number">* Age:</label>
+            <input id="number" type="number" placeholder="Enter your age" min='0' max='99' required/>
+          </div>
         </div>
         <div id="user-role">
-          <label for="role-dropdown">Which option best describes your current role?</label>
-          <select id="role-dropdown">
+          <label for="dropdown">Which option best describes your current role?</label>
+          <select id="dropdown">
             <option disabled value>Select an option</option>
             <option value="student">Student</option>
             <option value="Full Time Job">Full Time Job</option>
@@ -36,27 +42,21 @@
           <label for="recommend-friend">* How likely is it that you would recommend freeCodeCamp to a friend?</label>
           <ul id="rating">
             <li>
-              <label for="definitely">
-                Definitely
-                <input type="radio" name="rate" id="definitely" value="1"/>
-              </label>
+              <label class='radio-btn' for="definitely">Definitely</label>
+              <input type="radio" name="rate" id="definitely" value="1"/>
             </li>
             <li>
-              <label for="maybe">
-                Maybe
-                <input type="radio" name="rate" id="maybe" value="2"/>
-              </label>
+              <label class='radio-btn' for="maybe">Maybe</label>
+              <input type="radio" name="rate" id="maybe" value="2"/>
             </li>
             <li>
-              <label for="no">
-                Not at all
-                <input type="radio" name="rate" id="no" value="1"/>
-              </label>
+              <label class='radio-btn' for="no">Not at all</label>
+              <input type="radio" name="rate" id="no" value="1"/>
             </li>
           </ul>
         </div>
         <div id="checklist">
-          <label id='improve'>Things that hsould be improved in the future (Check all that apply):</label>
+          <label id='improve'>Things that should be improved in the future (Check all that apply):</label>
           <ul id="improve-checklist">
             <li><label><input type="checkbox" value="1"/>Front-end Projects</label></li>
             <li><label><input type="checkbox" value="2">Back-end Projects</label></li>
@@ -75,6 +75,7 @@
           <label for="comments">Any Comments or Suggestions?</label>
           <textarea id="comments" placeholder="Enter your comment here..."></textarea>
         </div>
+        <button type='submit'>Submit</button>
       </form>
     </section>
 
